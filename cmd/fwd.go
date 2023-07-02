@@ -50,8 +50,8 @@ var (
 			}
 
 			// get port
-			argRemotePort := strings.TrimSpace(viper.GetString("fwd-remote-port"))
-			argLocalPort := strings.TrimSpace(viper.GetString("fwd-local-port"))
+			argRemotePort := strings.TrimSpace(viper.GetString("remote"))
+			argLocalPort := strings.TrimSpace(viper.GetString("local"))
 			if argRemotePort == "" {
 				askPort, err := internal.AskPorts()
 				if err != nil {
