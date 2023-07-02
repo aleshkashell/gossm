@@ -28,8 +28,6 @@ var (
 				err        error
 			)
 
-			//viper.ReadInConfig()x
-			fmt.Printf("%+v\n", viper.AllSettings())
 			// get target
 			argTarget := strings.TrimSpace(viper.GetString("fwd-target"))
 			if argTarget != "" {
