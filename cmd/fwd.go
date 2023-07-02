@@ -29,7 +29,7 @@ var (
 			)
 
 			// get target
-			argTarget := strings.TrimSpace(viper.GetString("fwd-target"))
+			argTarget := strings.TrimSpace(viper.GetString("target"))
 			if argTarget != "" {
 				table, err := internal.FindInstances(ctx, *_credential.awsConfig)
 				if err != nil {
@@ -117,9 +117,9 @@ func init() {
 	fwdCommand.Flags().StringP("target", "t", "", "[optional] it is ec2 instanceId.")
 
 	// mapping viper
-	viper.BindPFlag("fwd-remote-port", fwdCommand.Flags().Lookup("remote"))
-	viper.BindPFlag("fwd-local-port", fwdCommand.Flags().Lookup("local"))
-	viper.BindPFlag("fwd-target", fwdCommand.Flags().Lookup("target"))
+	viper.BindPFlag("remote", fwdCommand.Flags().Lookup("remote"))
+	viper.BindPFlag("local", fwdCommand.Flags().Lookup("local"))
+	viper.BindPFlag("target", fwdCommand.Flags().Lookup("target"))
 
 	rootCmd.AddCommand(fwdCommand)
 }
